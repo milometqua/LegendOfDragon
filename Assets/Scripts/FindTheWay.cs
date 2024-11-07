@@ -106,6 +106,9 @@ public class FindTheWay : Singleton<FindTheWay>
         }
         BoardGenerate.allEggs[rowIndex, colIndex].
         GetComponent<EggController>().ChangeEggType(BoardGenerate.eggsType[rowIndex, colIndex] + 1);
+        yield return new WaitForSeconds(0.2f);
+        SetAllTileOrigin();
+        alreadySelectedArea = false;
     }
 
     public void SetAllTileOrigin()
